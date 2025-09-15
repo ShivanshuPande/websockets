@@ -55,8 +55,8 @@ wss.on('connection', function connection(socket) {
         });
     });
     userCount++;
-    console.log("something has established a connection through a websocket ");
-    socket.send("This is the message from the server!! , connection to the websocket has been established" + userCount);
+    console.log("something has established a connection through a websocket " + userCount);
+    socket.send("This is the message from the server!! , connection to the websocket has been established");
 });
 server.listen(8080, function () {
     console.log((new Date()) + "Server is listening on the port 8080");

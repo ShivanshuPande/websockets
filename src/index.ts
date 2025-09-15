@@ -30,9 +30,9 @@ wss.on('connection' , function connection(socket){
 
     userCount++;
     
-    console.log("something has established a connection through a websocket ")
+    console.log("something has established a connection through a websocket " + userCount)
 
-    socket.send("This is the message from the server!! , connection to the websocket has been established" +  userCount)
+    socket.send("This is the message from the server!! , connection to the websocket has been established" )
 
 });
 
