@@ -1,6 +1,8 @@
 import WebSocket, { WebSocketServer , RawData } from "ws";
 import http, { IncomingMessage, ServerResponse } from 'http';
 
+let userCount = 0;
+
 
 const server = http.createServer(function(request : IncomingMessage , response : ServerResponse){
 
@@ -24,10 +26,13 @@ wss.on('connection' , function connection(socket){
             }
         });
 
-    });
+    })
+
+    userCount++;
+    
     console.log("something has established a connection through a websocket ")
 
-    socket.send("This is the message from the server!! , connection to the websocket has been established")
+    socket.send("This is the message from the server!! , connection to the websocket has been established" +  userCount)
 
 });
 
